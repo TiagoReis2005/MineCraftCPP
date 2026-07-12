@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cmake --build build --config Debug 2>&1)",
+      "PowerShell($c = Get-Command cmake -ErrorAction SilentlyContinue; if \\($c\\) { $c.Source } else { \\(Get-ChildItem 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe','C:\\\\Program Files \\(x86\\)\\\\CMake\\\\bin\\\\cmake.exe' -ErrorAction SilentlyContinue\\).FullName })",
+      "PowerShell(& 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1)",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 6 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME STILL RUNNING \\(pid $\\($p.Id\\)\\) - close it so the build can relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 8 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 6 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 5 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 20 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 14 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\)\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 5 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 12 })",
+      "PowerShell(\\(Get-Item 'assets\\\\animations\\\\player.animation.json'\\).Length)",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 15 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 8 })",
+      "PowerShell($p = Get-Process MineCraftCPP -ErrorAction SilentlyContinue; if \\($p\\) { \"GAME RUNNING \\(pid $\\($p.Id\\)\\) - close it to relink\" } else { & 'C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.exe' --build build --config Debug 2>&1 | Select-Object -Last 6; Test-Path 'build\\\\bin\\\\Debug\\\\assets\\\\textures\\\\gui\\\\sprites\\\\spectator\\\\close.png' })"
+    ]
+  }
+}
