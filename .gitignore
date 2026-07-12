@@ -1,0 +1,16 @@
+# Build output
+/build/
+/out/
+/bin/
+
+# IDE / editor
+.vs/
+*.user
+*.suo
+CMakeSettings.json
+
+# CMake FetchContent caches (downloaded deps live under build/)
+_deps/
+
+# Game data
+/saves/

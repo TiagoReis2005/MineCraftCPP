@@ -1,0 +1,19 @@
+{
+    "duration": 0.6,
+    "loop": true,
+    "bones": {
+        "body":      { "rotation": { "0.0": [12, 0, 0] } },
+        "leftLeg":   { "rotation": { "0.0": [58, 0, 0],  "0.3": [-52, 0, 0], "0.6": [58, 0, 0] } },
+        "rightLeg":  { "rotation": { "0.0": [-52, 0, 0], "0.3": [58, 0, 0],  "0.6": [-52, 0, 0] } },
+        "leftShin":  { "rotation": { "0.0": [0, 0, 0], "0.15": [85, 0, 0], "0.3": [10, 0, 0], "0.6": [0, 0, 0] } },
+        "rightShin": { "rotation": { "0.0": [10, 0, 0], "0.3": [0, 0, 0], "0.45": [85, 0, 0], "0.6": [10, 0, 0] } },
+        "leftArm":   { "rotation": { "0.0": [-80, 0, 8], "0.3": [70, 0, 8],  "0.6": [-80, 0, 8] } },
+        "rightArm":  { "rotation": { "0.0": [70, 0, -8], "0.3": [-80, 0, -8], "0.6": [70, 0, -8] } }
+    },
+    "events": [
+        { "time": 0.0, "name": "foot_down", "bone": "leftShin" },
+        { "time": 0.3, "name": "foot_up",   "bone": "leftShin" },
+        { "time": 0.3, "name": "foot_down", "bone": "rightShin" },
+        { "time": 0.59, "name": "foot_up",  "bone": "rightShin" }
+    ]
+}

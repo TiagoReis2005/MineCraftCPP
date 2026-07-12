@@ -1,0 +1,94 @@
+{
+    "parameters": {
+        "speed":        { "type": "float",   "default": 0.0 },
+        "is_on_ground": { "type": "bool",    "default": true },
+        "jump_pressed": { "type": "trigger" },
+        "wave_pressed": { "type": "trigger" }
+    },
+    "clips": {
+        "idle": "loco_idle.clip.json",
+        "walk": "loco_walk.clip.json",
+        "run":  "loco_run.clip.json",
+        "jump_stand": "jump_stand.clip.json",
+        "jump_run":   "jump_run.clip.json",
+        "fall": "fall.clip.json",
+        "land": "land.clip.json",
+        "wave": "wave.clip.json"
+    },
+    "layers": [
+        {
+            "name": "locomotion",
+            "initial": "locomotion",
+            "states": {
+                "locomotion": {
+                    "node": {
+                        "type": "blend1d",
+                        "parameter": "speed",
+                        "points": [
+                            { "value": 0.0, "clip": "idle" },
+                            { "value": 4.7, "clip": "walk" },
+                            { "value": 7.5, "clip": "run" }
+                        ]
+                    },
+                    "transitions": [
+                        { "to": "jump_stand", "condition": "v.jump_pressed && v.speed < 4.0",  "duration": 0.08 },
+                        { "to": "jump_run",   "condition": "v.jump_pressed && v.speed >= 4.0", "duration": 0.08 },
+                        { "to": "fall",       "condition": "!v.is_on_ground",                  "duration": 0.15 }
+                    ]
+                },
+                "jump_stand": {
+                    "node": { "type": "clip", "clip": "jump_stand" },
+                    "one_shot": true,
+                    "on_finished": "fall",
+                    "interruptible_after": 0.18,
+                    "transitions": [
+                        { "to": "land", "condition": "v.is_on_ground", "duration": 0.05, "priority": 1 }
+                    ]
+                },
+                "jump_run": {
+                    "node": { "type": "clip", "clip": "jump_run" },
+                    "one_shot": true,
+                    "on_finished": "fall",
+                    "interruptible_after": 0.18,
+                    "transitions": [
+                        { "to": "land", "condition": "v.is_on_ground", "duration": 0.05, "priority": 1 }
+                    ]
+                },
+                "fall": {
+                    "node": { "type": "clip", "clip": "fall" },
+                    "transitions": [
+                        { "to": "land", "condition": "v.is_on_ground", "duration": 0.06 }
+                    ]
+                },
+                "land": {
+                    "node": { "type": "clip", "clip": "land" },
+                    "one_shot": true,
+                    "on_finished": "locomotion",
+                    "transitions": [
+                        { "to": "jump_stand", "condition": "v.jump_pressed && v.speed < 4.0",  "duration": 0.06, "priority": 2 },
+                        { "to": "jump_run",   "condition": "v.jump_pressed && v.speed >= 4.0", "duration": 0.06, "priority": 2 }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "action",
+            "mask": { "bones": ["rightArm"], "recursive": true },
+            "empty_state": "none",
+            "initial": "none",
+            "states": {
+                "none": {
+                    "transitions": [
+                        { "to": "wave", "condition": "v.wave_pressed", "duration": 0.15 }
+                    ]
+                },
+                "wave": {
+                    "node": { "type": "clip", "clip": "wave" },
+                    "one_shot": true,
+                    "on_finished": "none",
+                    "interruptible_after": 0.2
+                }
+            }
+        }
+    ]
+}

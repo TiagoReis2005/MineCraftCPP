@@ -1,0 +1,58 @@
+{
+  "language.name": "English",
+  "language.region": "US",
+
+  "menu.singleplayer": "Singleplayer",
+  "menu.multiplayer": "Multiplayer",
+  "menu.online": "Minecraft Realms",
+  "menu.options": "Options...",
+  "menu.quit": "Quit Game",
+  "menu.game": "Game Menu",
+  "menu.returnToGame": "Back to Game",
+  "menu.returnToMenu": "Save and Quit to Title",
+  "menu.shareToLan": "Multiplayer...",
+  "gui.advancements": "Advancements",
+  "gui.stats": "Statistics",
+
+  "selectWorld.title": "Select World",
+  "selectWorld.select": "Play Selected World",
+  "selectWorld.create": "Create New World",
+  "selectWorld.delete": "Delete",
+  "selectWorld.deleteButton": "Delete",
+  "selectWorld.deleteQuestion": "Delete",
+  "selectWorld.deleteWarning": "This world will be lost forever! (A long time!)",
+  "selectWorld.enterName": "World Name",
+  "selectWorld.enterSeed": "Seed (leave blank for random)",
+  "selectWorld.gameMode": "Game Mode",
+  "selectWorld.newWorld": "New World",
+  "selectWorld.empty": "No worlds yet - create one!",
+  "selectWorld.day": "Day",
+
+  "gameMode.creative": "Creative",
+  "gameMode.survival": "Survival",
+  "gameMode.spectator": "Spectator",
+
+  "gui.cancel": "Cancel",
+  "gui.done": "Done",
+
+  "options.title": "Options",
+  "options.fov": "FOV",
+  "options.sensitivity": "Sensitivity",
+  "options.renderDistance": "Render Distance",
+  "options.fullscreen": "Fullscreen",
+  "options.on": "ON",
+  "options.off": "OFF",
+  "options.language": "Language...",
+  "options.language.title": "Language",
+  "options.language.empty": "No language files (assets/lang/*.json)",
+
+  "profile.name": "Player Name",
+  "profile.uploadSkin": "Upload Skin...",
+
+  "itemGroup.buildingBlocks": "Building Blocks",
+  "itemGroup.natural": "Nature",
+  "itemGroup.functional": "Functional",
+
+  "container.inventory": "Inventory",
+  "container.crafting": "Crafting"
+}
